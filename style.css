@@ -1,42 +1,83 @@
 body {
     background-color: rgb(236, 236, 236);
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    max-width: 100%; */
+    /* flex: 0 0 auto; */
+
+}
+.settings button,
+.rsettings button {
+    width: 250px;
+    height: 50px;
+    margin: 2%;
+    display: block;
+    font-size: large;
+}
+.grid {
+    display: flex;
+    width: auto;
 }
 
-hr {
-    width: 100%;
+.grid button {
+    width: 50px;
+    height: 50px;
+    margin: auto 15px;
 }
 
 h1 {
     text-align: center;
 }
 
-.playGround {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    align-content: center;
-    width: 500px;
-    height: 500px;
-    background-color: white;
-    /* gap: 0%; */
-    /* padding: 0%; */
-    /* margin: 0%; */
-}
-
-div.square {
+/* div.square {
+    display: inline-block;
     background-color: white;
     box-sizing: border-box;
     width: 31.25px;
     height: 31.25px;
-    /* border: 1px solid black; */
-    /* padding: 0%; */
+    width: 31.25px;
+    border: 1px solid black;
+    padding: 0%;
     margin: 0%;
-    /* gap: 0%; */
+    gap: 0%;
+} */
+
+
+
+.main {
+    display: flex;
+    flex-flow: wrap;
+    /* flex: 0 0 auto; */
+    /* background-color: red; */
+    justify-content: center;
+}
+
+.playGround {
+    display: flex;
+    flex-flow: wrap column;
+    /* flex: 0 0 500px; */
+    /* align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center; */
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    /* font-size: 0; */
+}
+
+.settings,
+.rsettings {
+    display: flex;
+    flex-flow: column; 
+    width: 31.25%;
+    /* background-color: blue;  */
+    justify-content: center; 
+    align-items: center;
+    font-size: larger;
+    gap: 0;
 }

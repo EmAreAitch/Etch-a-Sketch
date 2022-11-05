@@ -8,9 +8,29 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-<body>
+<body ondragstart="return false">
 <h1>Etch-a-Sketch</h1><hr>
-<div class="playGround">
+<div class="main">
+    <div class="settings">
+        <p></p>
+        <div class="grid">
+            <button onclick="decGrid()">◄</button>
+            <button onclick="incGrid()">►</button>
+        </div>
+        <button class="pickColor" accesskey="q" onclick="_currentColor()">Pick Color(Q)</button>
+        <button class="bgColor" accesskey="c" onclick="_bgcolor()">Pick Background Color(C)</button>
+        <button class="eraser" accesskey="x" onclick="_eraser()" >Eraser(X): OFF</button>
+        <button class="reset" onclick="reset()">Reset</button>
+    </div>
+    <div class="playGround">
+    </div>
+    <div class="rsettings">
+        <button class="fill" onclick="fill()">Color Fill</button>
+        <button class="rainbow" onclick="_rainbow()">Rainbow: OFF</button>
+        <button class="shading" onclick="_shading()">Shading: OFF</button>
+        <button class="lighten" onclick="_lighten()">Lighten: OFF</button>
+        <button class="gridLines" onclick="_gridLines()">Grid Lines</button>
+    </div>
 </div>
 </body>
 </html>
