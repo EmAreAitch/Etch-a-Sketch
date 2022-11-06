@@ -9,15 +9,17 @@ let rainbowMode = false;
 let shadingMode = false;
 let lightenMode = false;
 let currentColor = 'black';
-let gridLines = false;
+let gridLinesMode = false;
 
 const playGround = document.querySelector(".playGround");
 const square = document.createElement("div");
 const grid = document.querySelector(".settings p");
+const penColor = document.querySelector('.penColor');
 const eraser = document.querySelector(".eraser"); 
 const rainbow = document.querySelector(".rainbow");
 const shading = document.querySelector(".shading");
 const lighten = document.querySelector(".lighten");
+const gridLines = document.querySelector('.gridLines');
 
 square.classList.add("square");
 square.style.width = 500/gridValue + 'px';
@@ -71,7 +73,8 @@ function sketch(e) {
         r = parseInt(Math.random() * 255);
         g = parseInt(Math.random() * 255);
         b = parseInt(Math.random() * 255);
-        e.target.style.backgroundColor = `rgb(${r},${g},${b})`     
+        e.target.style.backgroundColor = `rgb(${r},${g},${b})`
+        e.target.style.filter = 'brightness(1)';
     }
     
     else {
@@ -90,11 +93,11 @@ function reset() {
 function _eraser() {
     if (eraserMode===false) {
         eraserMode=true;
-        eraser.textContent = 'Eraser(X): ON';
+        eraser.style.backgroundColor = 'pink';
     }
     else if (eraserMode===true) {
         eraserMode=false;
-        eraser.textContent = 'Eraser(X): OFF';
+        eraser.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
     }
 }
 
@@ -131,33 +134,33 @@ eventer();
 function _rainbow() {
     if (rainbowMode===false) {
         rainbowMode=true;
-        rainbow.textContent = 'Rainbow: ON';
+        rainbow.style.backgroundColor = 'pink';
     }
     else if (rainbowMode===true) {
         rainbowMode=false;
-        rainbow.textContent = 'Rainbow: OFF';
+        rainbow.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
     }
 }
 
 function _shading() {
     if (shadingMode===false) {
         shadingMode=true;
-        shading.textContent = 'Shading: ON';
+        shading.style.backgroundColor = 'pink';
     }
     else if (shadingMode===true) {
         shadingMode=false;
-        shading.textContent = 'Shading: OFF';
+        shading.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
     }
 }
 
 function _lighten() {
     if (lightenMode===false) {
         lightenMode=true;
-        lighten.textContent = 'Lighten: ON';
+        lighten.style.backgroundColor = 'pink';
     }
     else if (lightenMode===true) {
         lightenMode=false;
-        lighten.textContent = 'Lighten: OFF';
+        lighten.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
     }
 }
 
@@ -165,6 +168,7 @@ function _currentColor() {
     newColor = prompt('Enter color name or hexcode or rgb(r,g,b)');
     if (!!newColor) {
         currentColor = newColor;
+        penColor.style.backgroundColor = currentColor;
     }
 }
 
@@ -184,7 +188,7 @@ function _bgcolor() {
     }
 }
 
-function fill() {
+function _fill() {
     fillColor = prompt('Enter color name or hexcode or rgb(r,g,b) or rainbow');
     if (!!fillColor) {
         if (fillColor == 'rainbow') {
@@ -197,22 +201,27 @@ function fill() {
         }
         else box.forEach(element => {
             element.style.backgroundColor = fillColor;
+            element.style.filter = 'brightness(1)';
         })
 }
 }
 
 function _gridLines() {
-    if (!gridLines) {
-        gridLines = !gridLines;
+    if (!gridLinesMode) {
+        gridLinesMode = !gridLinesMode;
         box.forEach(element => {
             element.style.border = '1px solid black';
         })
+        gridLines.style.backgroundColor = 'pink';
     }
 
-    else if (!!gridLines) {
-        gridLines = !gridLines;
+    else if (!!gridLinesMode) {
+        gridLinesMode = !gridLinesMode;
         box.forEach(element => {
             element.style.border = '';
         })
+        gridLines.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
     }
+
+    // document.querySelector('.gridLinesMode').classList.toggle('selectedOption');
 }

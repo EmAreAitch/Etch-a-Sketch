@@ -9,7 +9,16 @@
     <script src="script.js" defer></script>
 </head>
 <body ondragstart="return false">
-<h1>Etch-a-Sketch</h1><hr>
+<div class="header">
+<div class="todp">
+<p>Project By<a href="https://www.theodinproject.com"><img src="the-odin-project-logo.png" alt="the-odin-project-logo" width="175px"></a></p>
+</div>
+<h1>Etch-a-Sketch</h1>
+<div class="github">
+    <p>Built By <a href="https://github.com">EmAreAitch</a> </p>
+</div>
+
+</div>
 <div class="main">
     <div class="settings">
         <p></p>
@@ -17,18 +26,22 @@
             <button onclick="decGrid()">◄</button>
             <button onclick="incGrid()">►</button>
         </div>
-        <button class="pickColor" accesskey="q" onclick="_currentColor()">Pick Color(Q)</button>
-        <button class="bgColor" accesskey="c" onclick="_bgcolor()">Pick Background Color(C)</button>
-        <button class="eraser" accesskey="x" onclick="_eraser()" >Eraser(X): OFF</button>
+        <button class="pickColor" accesskey="q" onclick="_currentColor()">Pen Color(Alt+Q)</button>
+        <button class="bgColor" accesskey="c" onclick="_bgcolor()">Background Color(Alt+C)</button>
+        <button class="eraser" accesskey="x" onclick="_eraser()" >Eraser(Alt+X)</button>
         <button class="reset" onclick="reset()">Reset</button>
     </div>
     <div class="playGround">
     </div>
     <div class="rsettings">
-        <button class="fill" onclick="fill()">Color Fill</button>
-        <button class="rainbow" onclick="_rainbow()">Rainbow: OFF</button>
-        <button class="shading" onclick="_shading()">Shading: OFF</button>
-        <button class="lighten" onclick="_lighten()">Lighten: OFF</button>
+        <div class="penColorBox">
+        <p>Current Pen Color:</p>
+        <div class="penColor"></div>
+        </div>
+        <button class="fill" onclick="_fill()">Color Fill</button>
+        <button class="rainbow" onclick="_rainbow()">Rainbow</button>
+        <button class="shading" onclick="_shading()">Shading</button>
+        <button class="lighten" onclick="_lighten()">Lighten</button>
         <button class="gridLines" onclick="_gridLines()">Grid Lines</button>
     </div>
 </div>
