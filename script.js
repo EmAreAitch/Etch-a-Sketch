@@ -173,15 +173,10 @@ function _currentColor() {
 }
 
 function _bgcolor() {
-    bgcolor = prompt('Enter background color name or hexcode or rgb(r,g,b) or rainbow');
+    bgcolor = prompt('Enter background color name or hexcode or rgb(r,g,b) or none');
     if (!!bgcolor) {
-        if (bgcolor == 'rainbow') {
-            box.forEach(element => {
-                r = parseInt(Math.random() * 255);
-                g = parseInt(Math.random() * 255);
-                b = parseInt(Math.random() * 255);
-                element.style.backgroundColor = `rgb(${r},${g},${b})` 
-            })
+        if (bgcolor == 'none') {
+            playGround.style.backgroundColor = 'rgb(0,0,0,0.1)';
         }
 
         else playGround.style.backgroundColor = bgcolor;
@@ -223,5 +218,4 @@ function _gridLines() {
         gridLines.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
     }
 
-    // document.querySelector('.gridLinesMode').classList.toggle('selectedOption');
 }
