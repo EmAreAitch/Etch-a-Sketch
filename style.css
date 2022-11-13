@@ -4,6 +4,7 @@ html {
     background-size: cover;
     /* background-repeat: no-repeat; */
     min-height: 100vh;
+    user-select: none;
 
     /* background-attachment: fixed; */
     font-family: customFont;
