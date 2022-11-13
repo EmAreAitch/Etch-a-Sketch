@@ -1,9 +1,11 @@
-body {
+html {
     background-color: rgb(236, 236, 236);
-    background-image: url('assets/background1.gif');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
+    background: url('assets/background1.gif'); 
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    min-height: 100vh;
+
+    /* background-attachment: fixed; */
     font-family: customFont;
     /* display: flex;
     flex-direction: column;
